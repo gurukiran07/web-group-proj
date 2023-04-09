@@ -1,4 +1,4 @@
-// Author: Guru Kiran
+// Author: Guru Kiran(gkiran@dal.ca)
 
 const mongoose = require('mongoose');
 
@@ -8,6 +8,7 @@ const user_details = {
     firstName: String,
     lastName: String,
     event_ids: [String],
+    review_ids: [String],
     _id: mongoose.Schema.Types.ObjectId
 };
 

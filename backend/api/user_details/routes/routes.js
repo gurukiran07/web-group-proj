@@ -103,4 +103,27 @@ router.post("/otp", async (req, res) => {
 
 });
 
+router.post("/addreview", async (req, res) => {
+    const db_resp = await user_controller.addReviewUser(req.body)
+    console.log(db_resp, "/addreview");
+
+    if(db_resp.success){
+        res.status(200).json(db_resp)
+    }
+    else{
+        res.status(400).json(db_resp)
+    }
+})
+
+router.post("/fetchreviews", async (req, res) => {
+    const db_resp = await user_controller.fetchReviewsUser(req.body)
+
+    if (db_resp.success){
+        res.status(200).json(db_resp)
+    }
+    else{
+        res.status(400).json(db_resp)
+    }
+})
+
 module.exports = router;
