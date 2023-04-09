@@ -12,7 +12,7 @@ const addUser = async (data) => {
     await User.collection.findOne({ email: data.email }).then((_data) => {
       console.log(_data);
       if (_data == null) {
-        let _user = new User({ ...data, event_ids: [] });
+        let _user = new User({ ...data, event_ids: [], review_ids: [] });
         User.collection.insertOne(_user);
         resp = { success: true, message: "user added" };
       } else {
